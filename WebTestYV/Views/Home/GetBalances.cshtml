@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ResultData>
+
+<div>
+    <table class="table table-striped table-condensed table-bordered mt-2">
+        <tr class="bg-info text-white">
+            <th class="text-left">Период</th>
+            <th class="text-center">Входящие сальдо на начало периода</th>
+            <th class="text-center">Начислено за период</th>
+            <th class="text-center">Оплачено за период</th>
+            <th class="text-center">Исходящий баланс на конец периода</th>
+        </tr>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td class="text-left">@data.Period</td>
+                <td class="text-center">@data.InBalance</td>
+                <td class="text-center">@data.Calculation</td>
+                <td class="text-center">@data.Payment</td>
+                <td class="text-center">@data.BalanceEnd</td>
+            </tr>
+        }
+    </table>
+</div>.
